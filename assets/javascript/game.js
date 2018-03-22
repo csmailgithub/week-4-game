@@ -6,7 +6,7 @@ $(document).ready(function() {
     var losses = 0;
 
     function reset(){
-        console.log("you have started a new round,", reset)
+        console.log("You have started a new round,", reset)
         userTotal= 0;
         $('#finalTotal').text(userTotal);
         var random = Math.floor(Math.random() * 101 + 19);
@@ -24,30 +24,30 @@ $(document).ready(function() {
       // reset function  
       var random = Math.floor(Math.random() * 101 + 19);
       $("#random-number").text(random);
+    
     //these will generate the gems values
-
-    var num1= Math.floor(Math.random()*11+1)
-    var num2= Math.floor(Math.random()*11+1)
-    var num3= Math.floor(Math.random()*11+1)
-    var num4= Math.floor(Math.random()*11+1)
+    var gem1= Math.floor(Math.random()*11+1)
+    var gem2= Math.floor(Math.random()*11+1)
+    var gem3= Math.floor(Math.random()*11+1)
+    var gem4= Math.floor(Math.random()*11+1)
     
     userTotal = 0
 
     function chickenDinner(){
-        alert("You won!");
+        alert("Winner Winner Chicken Dinner!");
           wins++; 
           $('#Wins').text(wins);
           reset();
         }
     function loser() {
-        alert ("You lose!");
+        alert ("Bust!");
   losses++;
   $('#Losses').text(losses);
   reset()
     }
     //sets up click for jewels
   $('#blue').on ('click', function(){
-    userTotal = userTotal + num1;
+    userTotal = userTotal + gem1;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
           //sets win/lose conditions
@@ -59,7 +59,7 @@ $(document).ready(function() {
         }   
   })  
   $('#green').on ('click', function(){
-    userTotal = userTotal + num2;
+    userTotal = userTotal + gem2;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
         if (userTotal == random){
@@ -70,7 +70,7 @@ $(document).ready(function() {
         } 
   })  
   $('#red').on ('click', function(){
-    userTotal = userTotal + num3;
+    userTotal = userTotal + gem3;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal);
 //sets win/lose conditions
@@ -82,7 +82,7 @@ $(document).ready(function() {
         } 
   })  
   $('#yellow').on ('click', function(){
-    userTotal = userTotal + num4;
+    userTotal = userTotal + gem4;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
         if (userTotal == random){
