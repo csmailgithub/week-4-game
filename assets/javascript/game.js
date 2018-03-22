@@ -46,7 +46,7 @@ $(document).ready(function() {
   reset()
     }
     //sets up click for jewels
-  $('#one').on ('click', function(){
+  $('#blue').on ('click', function(){
     userTotal = userTotal + num1;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
@@ -58,7 +58,7 @@ $(document).ready(function() {
           loser();
         }   
   })  
-  $('#two').on ('click', function(){
+  $('#green').on ('click', function(){
     userTotal = userTotal + num2;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
@@ -69,7 +69,7 @@ $(document).ready(function() {
           loser();
         } 
   })  
-  $('#three').on ('click', function(){
+  $('#red').on ('click', function(){
     userTotal = userTotal + num3;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal);
@@ -81,23 +81,16 @@ $(document).ready(function() {
           loser();
         } 
   })  
-  $('#four').on ('click', function(){
+  $('#yellow').on ('click', function(){
     userTotal = userTotal + num4;
     console.log("New userTotal= " + userTotal);
     $('#finalTotal').text(userTotal); 
-    function chickenDinner(){
-        alert("You won!");
-          wins++; 
-          $('#Wins').text(wins);
-          reset();
+        if (userTotal == random){
+            chickenDinner();
         }
-        //addes the losses to the userTotal
-        function loser(){
-        alert ("You lose!");
-          losses++;
-          $('#Losses').text(losses);
-          reset()
-        }
+        else if ( userTotal > random){
+            loser();
+        } 
     });
     // var crystals = $("#crystals");
   
