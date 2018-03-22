@@ -1,18 +1,102 @@
 $(document).ready(function() {
 
     
+    var userTotal= 0; 
+    var wins= 0;
+    var losses = 0;
+
+    function reset(){
+        console.log("you have started a new round,", reset)
+        userTotal= 0;
+        $('#finalTotal').text(userTotal);
+        var random = Math.floor(Math.random() * 101 + 19);
+        $("#random-number").text(random);
+        } 
+
+    $('#Wins').text(wins);
+    $('#Losses').text(losses);
+
     $(".jumbotron").on("click", "#random-button", function() {
 
-      // ... we generate a random number
+      // to start the game we generate a random number between 19 -120
       var random = Math.floor(Math.random() * 101 + 19);
-
-      // ... and then dump the random number into our random-number div.
       $("#random-number").text(random);
 
-    
-    var targetNumber = random;
+    $("#random-number").text(random);
+    //these will generate the gems values
 
-    $("#random-number").text(targetNumber);
+    var num1= Math.floor(Math.random()*11+1)
+    var num2= Math.floor(Math.random()*11+1)
+    var num3= Math.floor(Math.random()*11+1)
+    var num4= Math.floor(Math.random()*11+1)
+    
+    userTotal = 0
+
+    function chickenDinner(){
+        alert("You won!");
+          wins++; 
+          $('#Wins').text(wins);
+          reset();
+        }
+    function loser() {
+        alert ("You lose!");
+  losses++;
+  $('#Losses').text(losses);
+  reset()
+    }
+    //sets up click for jewels
+  $('#one').on ('click', function(){
+    userTotal = userTotal + num1;
+    console.log("New userTotal= " + userTotal);
+    $('#finalTotal').text(userTotal); 
+          //sets win/lose conditions
+        if (userTotal == random){
+          chickenDinner();
+        }
+        else if ( userTotal > random){
+          loser();
+        }   
+  })  
+  $('#two').on ('click', function(){
+    userTotal = userTotal + num2;
+    console.log("New userTotal= " + userTotal);
+    $('#finalTotal').text(userTotal); 
+        if (userTotal == random){
+          chickenDinner();
+        }
+        else if ( userTotal > random){
+          loser();
+        } 
+  })  
+  $('#three').on ('click', function(){
+    userTotal = userTotal + num3;
+    console.log("New userTotal= " + userTotal);
+    $('#finalTotal').text(userTotal);
+//sets win/lose conditions
+          if (userTotal == random){
+          chickenDinner();
+        }
+        else if ( userTotal > random){
+          loser();
+        } 
+  })  
+  $('#four').on ('click', function(){
+    userTotal = userTotal + num4;
+    console.log("New userTotal= " + userTotal);
+    $('#finalTotal').text(userTotal); 
+    function chickenDinner(){
+        alert("You won!");
+          wins++; 
+          $('#Wins').text(wins);
+          reset();
+        }
+        //addes the losses to the userTotal
+        function loser(){
+        alert ("You lose!");
+          losses++;
+          $('#Losses').text(losses);
+          reset()
+        }
     });
     // var crystals = $("#crystals");
   
@@ -52,21 +136,21 @@ $(document).ready(function() {
     //   // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
     //   // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
   
-      var crystalValue = ($(this).attr("data-crystalvalue"));
-      crystalValue = parseInt(crystalValue);
-      // We then add the crystalValue to the user's "counter" which is a global variable.
-      // Every click, from every crystal adds to the global counter.
-      counter += crystalValue;
+    //   var crystalValue = ($(this).attr("data-crystalvalue"));
+    //   crystalValue = parseInt(crystalValue);
+    //   // We then add the crystalValue to the user's "counter" which is a global variable.
+    //   // Every click, from every crystal adds to the global counter.
+    //   counter += crystalValue;
   
-      // All of the same game win-lose logic applies. So the rest remains unchanged.
-      alert("New score: " + counter);
+    //   // All of the same game win-lose logic applies. So the rest remains unchanged.
+    //   alert("New score: " + counter);
   
-      if (counter === targetNumber) {
-        alert("You win!");
-      }
+    //   if (counter === targetNumber) {
+    //     alert("You win!");
+    //   }
   
-      else if (counter >= targetNumber) {
-        alert("You lose!!");
-      }
+    //   else if (counter >= targetNumber) {
+    //     alert("You lose!!");
+    //   }
 });
-
+});
