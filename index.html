@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrystalsCollector Game</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+        <div class="jumbotron">
+
+                <h1 class="text-center">Start the Game by generating a random number!</h1>
+            
+                <div class="text-center">
+            
+                  <!-- Here we have our button for generating random numbers (#random-button) -->
+                  <button id="random-button" class="btn btn-primary btn-lg"><h1>Start!</h1></button>
+            
+                </div>
+    
+    
+                <p><h1>Crystals Collector Game</h1></p>
+                <h1 class="text-center" id="random-number"></h1>
+    
+    <p>You will be given random number at the beginning of the game.
+        
+        There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. 
+        You win the game by matching your total score to the random number generated at the start of the game, you lose the game if you exceed the random number. the value of each crystal is hidden from you until you click on it. Every time the game is started or restarted the value of the crystals will change.
+
+    </p>
+    <div class="row">
+            <div class ="col-4-md">
+            <div class="WinsAndLossTally" value="wins">
+                    <p><h4>Wins: 0</h4></p>
+                    <p><h4>Losses: 0</h4></p>
+                </div>    
+                </div>
+                <div class="col-4-md">
+                    <div class="counter"><p><h5>Your Count</h5></p></div>
+                </div>
+            </div>
+    <div class="row">
+    <div class="col-3-md"></div>
+            <div id="crystals">
+            </div>
+        </div>
+
+         <!--link to game.js -->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
