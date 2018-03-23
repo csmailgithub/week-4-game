@@ -10,7 +10,7 @@ $(document).ready(function() {
     var gem3= Math.floor(Math.random()*11+1)
     var gem4= Math.floor(Math.random()*11+1)
     
-    var userTotal= 0; 
+    var Total= 0; 
     var wins= 0;
     var losses = 0;
 $('#Wins').text(wins);
@@ -18,12 +18,12 @@ $('#Losses').text(losses);
 
 
 function reset(){
-    console.log("You have started a new round,", reset)
-    userTotal= 0;
+    console.log("You have started a new round,")
+    Total= 0;
             
     random = Math.floor(Math.random() * 101 + 19);
     $("#random-number").text(random);
-    $('#finalTotal').text(userTotal);
+    $('#finalTotal').text(Total);
         //resets the gem values...hopefully
     var gem1= Math.floor(Math.random()*11+1)
     var gem2= Math.floor(Math.random()*11+1)
@@ -45,48 +45,48 @@ reset();
     }
 //click events for gems
 $('#blue').on ('click', function(){
-   userTotal = userTotal + gem1;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal); 
+   Total = Total + gem1;
+    console.log("New Total= " + Total);
+    $('#finalTotal').text(Total); 
         //checks to see is win/loss condition is met
-        if (userTotal === random){
+        if (Total === random){
           chickenDinner();
         }
-        else if ( userTotal > random){
+        else if ( Total > random){
           loser();
         }   
 })  
 $('#green').on ('click', function(){
-   userTotal = userTotal + gem2;
-   console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal); 
-        if (userTotal === random){
+   Total = Total + gem2;
+   console.log("New Total= " + Total);
+    $('#finalTotal').text(Total); 
+        if (Total === random){
           chickenDinner();
         }
-        else if ( userTotal > random){
+        else if ( Total > random){
           loser();
         } 
 })  
   $('#red').on ('click', function(){
-    userTotal = userTotal + gem3;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal);
+    Total = Total + gem3;
+    console.log("New Total= " + Total);
+    $('#finalTotal').text(Total);
 //checks win/loss condition is met
-          if (userTotal === random){
+          if (Total === random){
           chickenDinner();
         }
-        else if ( userTotal > random){
+        else if ( Total > random){
           loser();
         } 
   })  
   $('#yellow').on ('click', function(){
-    userTotal = userTotal + gem4;
-    console.log("New userTotal= " + userTotal);
-    $('#finalTotal').text(userTotal); 
-        if (userTotal === random){
+    Total = Total + gem4;
+    console.log("New Total= " + Total);
+    $('#finalTotal').text(Total); 
+        if (Total === random){
             chickenDinner();
         }
-        else if ( userTotal > random){
+        else if ( Total > random){
             loser();
         } 
     });
